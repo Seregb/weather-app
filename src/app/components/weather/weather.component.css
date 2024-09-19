@@ -1,0 +1,33 @@
+#main_container {
+  display: flex;
+  overflow: auto;
+  justify-content: space-around;
+}
+
+#chart {
+  background: aliceblue;
+  width: 95vw;
+  height: 400px;
+  margin: 1.5rem;
+}
+
+td {
+  text-align: center;
+}
+
+#weather_data {
+  margin-right: 50px;
+}
+
+table {
+  min-width: 700px;
+}
+
+.hour_weather_table {
+  /*width: 80%;*/
+}
+
+.button {
+  margin-right: 10px;
+  margin-left: 10px;
+}

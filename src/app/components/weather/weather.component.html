@@ -1,0 +1,44 @@
+<div id="main_container">
+  <div id="weather_data">
+    <h1>Погода в городе</h1>
+    <input type="text" [(ngModel)]="city" placeholder="Введите название города">
+    <button class="button" (click)="getWeather()">Получить погоду</button>
+
+    <h2>Текущая погода</h2>
+    <div *ngIf="currentWeather">
+      <p>Температура: {{currentWeather.temp_c}} °C</p>
+      <p>Влажность: {{currentWeather.humidity}} %</p>
+      <p>Давление: {{currentWeather.pressure_mb}} hPa</p>
+      <p>Облачность: {{currentWeather.cloud}} %</p>
+    </div>
+  </div>
+
+  <div class="hour_weather_table">
+    <h2>Часовая погода</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>Время</th>
+        <th>Температура (°C)</th>
+        <th>Облака (%)</th>
+        <th>Давление (hPa)</th>
+        <th>Влажность (%)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hour of hourlyWeather">
+        <td>{{ hour.time | date:'HH:mm' }}</td>
+        <td>{{ hour.temp_c }}</td>
+        <td>{{ hour.cloud }}</td>
+        <td>{{ hour.pressure_mb }}</td>
+        <td>{{ hour.humidity }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div id="chart"></div>
+
+
